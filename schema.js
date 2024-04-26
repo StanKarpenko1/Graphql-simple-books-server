@@ -10,7 +10,7 @@ export const typeDefs = `#graphql
   type Review {
     id: ID!
     rating: Int!
-    comment: String!
+    content: String!
 }
 type Author {
       id: ID!
@@ -20,7 +20,9 @@ type Author {
 
   type Query {
       allReviews: [Review]
-      allGames: [Game]
+      getReview(id: ID!): Review
+      allGames: [Game] 
+      game: [Game]
       allAuthors: [Author]
   }
 

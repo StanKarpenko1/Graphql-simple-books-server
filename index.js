@@ -15,9 +15,13 @@ const resolvers = {
         allReviews () {
             return db.reviews;
         },
+        getReview (_, args) {
+            return db.reviews.find((review) => review.id === args.id);
+        },
         allAuthors () {
             return db.authors;
         }
+
     }
 }
 
@@ -30,7 +34,10 @@ const server = new ApolloServer({
 });
 
 const { url } = await startStandaloneServer(server, {
-    listen: {port: PORT}
+    listen: {
+        port: PORT,
+        path: "/graphql"
+    }
 });
 
 console.log(`Server ready at port: ${PORT} - url: ${url}`);
