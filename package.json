@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "cy:o": "cypress open"
+    "cyo": "cypress open"
   },
   "keywords": [],
   "author": "",
